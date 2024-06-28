@@ -1,5 +1,5 @@
 //While the page is loaded, keep clicking on check boxes
-var inputs = document.querySelectorAll("input[type='checkbox']");
+var inputs = document.querySelectorAll("input[type='checkbox']:not(:checked)");
 
 function doSome(currentIndex){
     //get random number between 50 and 200
@@ -20,9 +20,7 @@ function doSome(currentIndex){
 
 let index = 0;
 function main() {
-    inputs = document.querySelectorAll("input[type='checkbox']");
-    //console.log(inputs);
-
+    inputs = document.querySelectorAll("input[type='checkbox']:not(:checked)");
     if(inputs.length == 0 || inputs.length == undefined || inputs.length == NaN || inputs.length == null){
         //Stil loading checkboxes
         console.log("inputs array length == 0")
@@ -30,15 +28,24 @@ function main() {
         setTimeout(main, randomWaitMS);
     }
     else {
+        /*
         console.log("Running Click Starting From: " + index);
         index = doSome(index);
         console.log("Finished Click Ending At: " + index);
     
         if(index > inputs.length) index = 0;
+        */
+
+        if(inputs.length > 0) inputs[0].click();
     
         //wait some time
         let randomWaitMS = 125;
-        setTimeout(main, randomWaitMS);
+        index++;
+        if(index > 5){
+            index = 0;
+            setTimeout(main, randomWaitMS*5);
+        }
+        else setTimeout(main, randomWaitMS);
     }
 }
 
