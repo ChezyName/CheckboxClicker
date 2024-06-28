@@ -1,0 +1,23 @@
+{
+  "name": "Automatic Checkbox Clicker",
+  "description": "to win onemillioncheckboxes.com",
+  "version": "1.0",
+  "manifest_version": 3,
+  "action": {
+    "default_popup": "main.html"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": ["main.js"],
+      "matches": [
+        "https://onemillioncheckboxes.com/*"
+      ]
+    }
+  ],
+  "icons": {
+    "1256": "CheckBoxClick_Icon.png"
+  }
+}

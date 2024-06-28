@@ -1,0 +1,19 @@
+body {
+    background-color: #1E1E1E;
+}
+
+div {
+    color: white;
+}
+
+span,a,h2 {
+    text-align: center;
+}
+
+input {
+    margin-top: 5%;
+    background-color: #1E1E1E;
+    color: white;
+    box-shadow: none;
+    border: 1px solid white;
+}
